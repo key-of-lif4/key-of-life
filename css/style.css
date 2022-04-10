@@ -702,6 +702,18 @@ section{
         height: calc(100vh - 9.5rem);
     }
 
+    .home{
+        min-height: 100vh;
+        min-width: 50%;
+        display: flex;
+        align-items: center;
+        background:url(../images/IMG-20211226-WA0048.jpg) no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    
     .header .navbar.active{
         right:0;
     }

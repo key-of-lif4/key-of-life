@@ -160,12 +160,42 @@ label{
     margin-left: 150px;  
     border-radius: 16px;  
 }
+.img{
+        transform: scale(0.3);
+        padding-top: 7em;
+        padding-left: 2em;
+    }
 @media (max-width:768px){
     .container{
     width:40em;
 }
     .send{
         margin-left: 85px;  
+    }
+    .img{
+        position: absolute;
+        padding-top: 566px;
+        padding-right: 54px;
+        margin-left: 73px;
+        transform: scale(1);
+        width: 300px;
+    }
+}
+@media (max-width:410px){
+   
+    .container{
+    width:40em;
+}
+    .send{
+        margin-left: 85px;  
+    }
+    .img{
+        position: absolute;
+        padding-top: 566px;
+        padding-right: 54px;
+        margin-left: 55px;
+        transform: scale(1);
+        width: 300px;
     }
 }
     </style>
@@ -224,6 +254,7 @@ label{
     </div>
 
 </header>
+<img src="images/Notice.png" alt="" class="img" >
 
     <div class="container d-flex justify-content-center mt-5 mb-5">
            

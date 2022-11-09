@@ -138,7 +138,6 @@ div .p1:hover{
 
     </style>
 </head>
-
 <body>
     <header class="header">
 
@@ -156,16 +155,22 @@ div .p1:hover{
         </nav>
         </header>
     <div class="box">
-        <h3>Ancient Egyptian Subliminal To Awaken Divine Feminine/
-            Sacred Goddess Energy/ Healing Female Energy</h3>
-        <img src="images/20210808_121710.jpg" alt="">
-        <div class="price">$22.22 <span>50.99</span></div>
+        <h3>Ancient Egyptian Financial Success Combo Subliminal for Desired Business|
+             Job| Career| Opportunities| Employment |Attract Clients</h3>
+        <img src="images/20220705_170003.jpg" alt="">
+        <div class="price">$11.11 <span>20.99</span></div>
         <ahref="#" class="btn">DESCREPTION</a>
     </div>
-   <a href="payment - Copy.html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag"></a> 
-   <a href="payment - Copy.html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag1"></a> 
-    <iframe src="description kundalini aura cleanser(2).html" frameborder="0"></iframe>
+   <a href="paymentcleo - Copy (2).html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag"></a> 
+   <a href="paymentcleo - Copy (2).html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag1"></a> 
+    <iframe src="bussiness jobcombo.html" frameborder="0"></iframe>
     <div id="div1"> </div>
-
+    <?php
+    echo "<h3> Aujourd'hui le ". date('d / M / Y H:m:s')."</h3><hr/>";
+    echo "<h2>Bienvenue sur le site PHP 7</h2>";    
+    ?>
+    <?php
+        include("class.php")
+    ?>
 </body>
 </html>

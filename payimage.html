@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
@@ -18,7 +17,20 @@ html::-webkit-scrollbar{
     width: .8rem;
     height: 0.2em;
 }
+.heading3{
+    text-align: center;
+    color:#ff0000;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    padding-top: 3.5rem;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
 
+.heading3 span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
 html::-webkit-scrollbar-track{
     background: transparent;
 }
@@ -160,15 +172,12 @@ label{
     margin-left: 150px;  
     border-radius: 16px;  
 }
-.header{
-        padding-bottom: -10px;
-    }
 .img{
-        transform: scale(0.3);
+        transform: scale(0.2);
         padding-top: 7em;
         padding-left: 2em;
     }
-@media (max-width:768px){
+    @media (max-width:768px){
     .container{
     width:40em;
 }
@@ -177,7 +186,7 @@ label{
     }
     .img{
         position: absolute;
-        padding-top: 566px;
+        padding-top: 94px;
         padding-right: 54px;
         margin-left: 73px;
         transform: scale(1);
@@ -187,6 +196,7 @@ label{
 @media (max-width:410px){
    
     .container{
+        margin-top:100px;
     width:40em;
 }
     .send{
@@ -194,32 +204,27 @@ label{
     }
     .img{
         position: absolute;
-        padding-top: 566px;
+        padding-top: 113px;
         padding-right: 54px;
         margin-left: 55px;
         transform: scale(1);
         width: 300px;
     }
 }
-
     </style>
 </head>
 <body>
   <header class="header">
-
-    <a href="#" class="logo">
+    <a href="index.html" class="logo">
         <img src="images/20211228_133743 (1).png" alt="">
     </a>
-
     <nav class="navbar">
-        <a href="#about">about us</a>
+        <a href="index.html">HOME </a>
         <a href="#Videos&Audios">VIDEOS & AUDIOS</a>
         <a href="#review">review</a>
         <a href="#contact">contact</a>
         <a href="#YOUTUBEVIDEO">YOUTUBE VIDEOs</a>
     </nav>
-
-
     <div class="search-form">
         <input type="search" id="search-box" placeholder="search here...">
         <label for="search-box" class="fas fa-search"></label>
@@ -262,36 +267,38 @@ label{
     </div>
 
 </header>
+<!-- <img src="images/Notice.png" alt="" class="img" > -->
 
-    
-    <div class="container d-flex justify-content-center mt-5 mb-5" >
+    <div class="container d-flex justify-content-center mt-5 mb-5">
            
-    <form id="form"> 
+
+    <form id="form">
         <h3 class="heading3" > You must <span>fill out the form and click on send
             before purchasing</span></h3>
         <div class="field">
-          <label for="to_name">paypal Email </label>
-          <input type="email" name="to_name" id="to_name" class="form-control">
+          <label for="to_name" required>paypal Email </label>
+          <input type="email" name="to_name" id="to_name" class="form-control" required>
         </div>
         <div class="field">
-          <label for="from_name">Your Email</label>
-          <input type="email" name="from_name" id="from_name" class="form-control">
+          <label for="from_name" required>Your Email</label>
+          <input type="email" name="from_name" id="from_name" class="form-control" required>
         </div>
         <div class="field">
           <label for="message">Video Name</label>
-          <input type="text" name="message" id="message" class="form-control" value="Ancient Egyptian Tutankhamun Treasures Subliminal To attract money / King Tut Money Magnet"> 
+          <input type="text" name="message" id="message" class="form-control" required> 
         </div>   
-        <input type="submit" id="button" value="Send"  class="send"  >
+        <input type="submit" id="button" value="Send"  class="send" required>
         </form>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: flex; justify-content: center;">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"style="display: flex; justify-content: center;">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="M7GEX76JRSMMC">
             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-    </div>  
+        </form>
+    </div>
   <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
   <script type="text/javascript">
     emailjs.init('GwqFAEL36yKvFKb-r')
   </script>
@@ -316,6 +323,11 @@ document.getElementById('form')
       alert(JSON.stringify(err));
     });
 });
+
+const url = window.location.href;
+const queryString = url.split('?')[1];  
+const id = queryString.split('=')[1].replace(/%27/g, '');;
+document.getElementById('message').value = id;
 </script>
 </body>
 </html>

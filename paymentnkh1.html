@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
@@ -261,20 +260,22 @@ label{
            
 
     <form id="form">
+        <h3 class="heading3" > You must <span>fill out the form and click on send
+            before purchasing</span></h3>
         <div class="field">
           <label for="to_name">paypal Email </label>
-          <input type="email" name="to_name" id="to_name" class="form-control">
+          <input type="email" name="to_name" id="to_name" class="form-control" required>
         </div>
         <div class="field">
-          <label for="from_name">Your Email</label>
+          <label for="from_name" required>Your Email</label>
           <input type="email" name="from_name" id="from_name" class="form-control">
         </div>
         <div class="field">
           <label for="message">Video Name</label>
           <input type="text" name="message" id="message" class="form-control" value="Ancient Egyptian Root Chakra Subliminal to Remain
-          Grounded / Anubis Healing Energy/ Chants/ Mantras"> 
+          Grounded / Anubis Healing Energy/ Chants/ Mantras" required> 
         </div>   
-        <input type="submit" id="button" value="Send"  class="send">
+        <input type="submit" id="button" value="Send"  class="send" required>
         </form>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"style="display: flex; justify-content: center;">
             <input type="hidden" name="cmd" value="_s-xclick">

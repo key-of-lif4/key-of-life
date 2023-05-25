@@ -661,6 +661,42 @@
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+<script>
+    const images = document.querySelectorAll('.box img');
 
+images.forEach((image) => {
+  image.addEventListener('click', function () {
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+
+    const popupImage = document.createElement('img');
+    popupImage.src = this.src;
+    popupImage.alt = this.alt;
+
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.classList.add('close-button');
+    closeButton.addEventListener('click', function() {
+      popup.remove();
+    });
+
+    popup.appendChild(popupImage);
+    popup.appendChild(closeButton);
+    document.body.appendChild(popup);
+
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.remove();
+      }
+    });
+  });
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    popup.remove();
+  }
+});
+</script>
 </body>
 </html>

@@ -342,35 +342,59 @@
           "KEY182.jpg",
           "KEY189.jpg"
         ];
-        function createImageDivs() {
+ function createImageDivs() {
             const boxContainer = document.querySelector('.box-container');
-            
-            imageFiles.forEach((imageFile) => {
-                // Create elements
-                const box = document.createElement('div');
-                const img = document.createElement('img');
-                const price = document.createElement('div');
-                const btn = document.createElement('a');
-                
-                // Set element attributes and content
-                box.classList.add('box');
-                img.src = `images/${imageFile}`;
-                img.alt = '';
-                price.classList.add('price');
-                price.innerHTML = '$5.55<span>11.11</span>';
-                btn.href = `payimage.html?id=ID:${imageFile.replace('.jpg', '')}`;
-                btn.classList.add('btn');
-                btn.textContent = 'buy now';
-                
-                // Append elements in the correct hierarchy
-                box.appendChild(img);
-                box.appendChild(price);
-                box.appendChild(btn);
-                boxContainer.appendChild(box);
-            });
-        }
         
-        document.addEventListener('DOMContentLoaded', createImageDivs);
+            imageFiles.forEach((imageFile) => {
+              // Create elements
+              const box = document.createElement('div');
+              const img = document.createElement('img');
+              const price = document.createElement('div');
+              const btn = document.createElement('a');
+        
+              // Set element attributes and content
+              box.classList.add('box');
+              img.src = `images/${imageFile}`;
+              img.alt = '';
+              img.addEventListener('click', function () {
+                const popup = document.createElement('div');
+                popup.classList.add('popup');
+        
+                const popupImage = document.createElement('img');
+                popupImage.src = this.src;
+                popupImage.alt = this.alt;
+        
+                const closeButton = document.createElement('button');
+                closeButton.textContent = 'Close';
+                closeButton.classList.add('close-button');
+                closeButton.addEventListener('click', function() {
+                  popup.remove();
+                });
+        
+                popup.appendChild(popupImage);
+                popup.appendChild(closeButton);
+                document.body.appendChild(popup);
+        
+                popup.addEventListener('click', function(e) {
+                  if (e.target === popup) {
+                    popup.remove();
+                  }
+                });
+              });
+              price.classList.add('price');
+              price.innerHTML = '$5.55<span>11.11</span>';
+              btn.href = `payimage.html?id=ID:${imageFile.replace('.jpg', '')}`;
+              btn.classList.add('btn');
+              btn.textContent = 'buy now';
+        
+              // Append elements in the correct hierarchy
+              box.appendChild(img);
+              box.appendChild(price);
+              box.appendChild(btn);
+              boxContainer.appendChild(box);
+            });
+          }   
+          document.addEventListener('DOMContentLoaded', createImageDivs); 
     </script>
 
 <!-- footer section ends -->

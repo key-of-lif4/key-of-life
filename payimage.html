@@ -17,20 +17,7 @@ html::-webkit-scrollbar{
     width: .8rem;
     height: 0.2em;
 }
-.heading3{
-    text-align: center;
-    color:#ff0000;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    padding-top: 3.5rem;
-    font-size: 1.9rem;
-    font-weight: bold;
-}
 
-.heading3 span{
-    color:var(--main-color);
-    text-transform: uppercase;
-}
 html::-webkit-scrollbar-track{
     background: transparent;
 }
@@ -172,8 +159,65 @@ label{
     margin-left: 150px;  
     border-radius: 16px;  
 }
+#payNow {
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(32,33,36,.28);
+    transition: all 0.3s ease; 
+  }
+  
+  #payNow:hover {
+    font-size: 1.3rem;
+    box-shadow: 0 10px 20px rgba(32,33,36,.19), 0 6px 6px rgba(32,33,36,.23); 
+  }
+  
+  #payNow:active {
+    background: #1893c4;
+    box-shadow: 0 5px 10px rgba(32,33,36,.2);  
+  }
+  #image {
+    display: block; 
+    width: 350px; 
+  }
+  
+  @media (max-width: 768px) { 
+    #image {
+      width: 70%; 
+    }
+  }
+  
+  @media (max-width: 425px) {  
+    #image {
+      width: 80%;  
+    }
+  }
+
+
+  #image {
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+  #image {
+    height: 100%;
+  }
+  #image {
+    position: relative; 
+  }
+  
+  #image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px; /* Half of image height */
+    margin-left: -225px; /* Half of image width  */  
+   }
+
+
+
 .img{
-        transform: scale(0.2);
+        transform: scale(0.3);
         padding-top: 7em;
         padding-left: 2em;
     }
@@ -289,12 +333,13 @@ label{
         </div>   
         <input type="submit" id="button" value="Send"  class="send" required>
         </form>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"style="display: flex; justify-content: center;">
+        <img id="image" src="images/pay.png" alt="" width="450px" style="justify-content: center; display: none;" >
+        <form id="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: flex; justify-content: center; display: none;" >  
             <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="M7GEX76JRSMMC">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <input type="hidden" name="hosted_button_id" value="VALRANF9HC9W6">
+            <input type="image" src="images/iconPaypal.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" id="payNow">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
+        </form> 
     </div>
   <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -315,14 +360,18 @@ document.getElementById('form')
    const templateID = 'template_ilm3pza';
 
    emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-});
+   .then(() => {
+     btn.value = 'Send Email';
+     alert('Sent!');
+     paypalForm.style.display = 'flex';
+     image.style.display = 'flex';
+     form.style.display = 'none';
+   
+   }, (err) => {
+     btn.value = 'Send Email';
+     alert(JSON.stringify(err));
+   });
+   });
 
 const url = window.location.href;
 const queryString = url.split('?')[1];  
@@ -331,3 +380,4 @@ document.getElementById('message').value = id;
 </script>
 </body>
 </html>
+

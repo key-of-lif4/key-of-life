@@ -321,15 +321,15 @@ label{
             before purchasing</span></h3>
         <div class="field">
           <label for="to_name">paypal Email </label>
-          <input type="email" name="to_name" id="to_name" class="form-control" required>
+          <input type="email" name="to_name" id="to_name" class="form-control">
         </div>
         <div class="field">
           <label for="from_name">Your Email</label>
-          <input type="email" name="from_name" id="from_name" class="form-control" required>
+          <input type="email" name="from_name" id="from_name" class="form-control">
         </div>
         <div class="field">
           <label for="message">Video Name</label>
-          <input type="text" name="message" id="message" class="form-control" value="🙏Ancient Egyptian God Sacred Chant/ Invocation Subliminal/ Healing Energy/ Meditation Music/A Ka Dua" required> 
+          <input type="text" name="message" id="message" class="form-control" value="Ancient Egyptian Subliminal to Get a Beautiful Feminine Face / Healing Energy/ Affirmations / Chants0"> 
        </div>   
         <input type="submit" id="button" value="Send"  class="send">
         </form>
@@ -343,6 +343,7 @@ label{
             <input type="image" src="images/iconPaypal.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" id="payNow">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
         </form> 
+
 
     </div>
   <script type="text/javascript"
@@ -364,14 +365,16 @@ document.getElementById('form')
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = 'Send Email';
-      alert('Sent!');
+      alert('Email sent!');
       paypalForm.style.display = 'flex';
       image.style.display = 'flex';
       form.style.display = 'none';
 
-    }, (err) => {
+    })
+    .catch(() => {
+      btn.disabled = false;
       btn.value = 'Send Email';
-      alert(JSON.stringify(err));
+      alert('Sorry, your email could not be sent. Please try again.');
     });
 });
 </script>

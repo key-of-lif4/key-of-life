@@ -160,9 +160,9 @@ div .p1:hover{
         <div class="price">$22.22 <span>50.99</span></div>
         <ahref="#" class="btn">DESCREPTION</a>
     </div>
-   <a href="paymentKemetian.html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag"></a> 
-   <a href="paymentKemetian.html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag1"></a> 
-    <iframe src="12-chakras.html" frameborder="0"></iframe>
+   <a href="MagicPay.html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag"></a> 
+   <a href="MagicPay.html"><img src="images/360_F_25050352_Oj6MjzEEU7B38wGvYbk7N04rg1djSoKh.png" alt="" class="imag1"></a> 
+    <iframe src="MagicDes.html" frameborder="0"></iframe>
     <div id="div1"> </div>
 </body>
 </html>
